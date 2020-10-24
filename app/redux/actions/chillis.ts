@@ -1,3 +1,5 @@
+import { normalizeChillis } from '../normalizers';
+
 import { Chilli } from '../../types/resources';
 import {
   ChillisActionTypes,
@@ -7,8 +9,6 @@ import {
 export const chillisLoaded = (data: Chilli[]): ChillisLoadedAction => {
   return {
     type: ChillisActionTypes.CHILLIS_LOADED,
-    payload: {
-      chillis: data,
-    },
+    payload: normalizeChillis(data),
   };
 };

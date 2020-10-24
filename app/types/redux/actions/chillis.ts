@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { Chilli } from '../../resources';
+import { NormalizedChillis } from '../normalizers';
 
 export enum ChillisActionTypes {
   CHILLIS_LOADED = 'CHILLIS_LOADED',
@@ -8,9 +8,7 @@ export enum ChillisActionTypes {
 
 export interface ChillisLoadedAction extends Action {
   type: ChillisActionTypes.CHILLIS_LOADED;
-  payload: {
-    chillis: Chilli[];
-  };
+  payload: NormalizedChillis;
 }
 
 export type ChillisActions = ChillisLoadedAction;

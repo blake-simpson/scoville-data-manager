@@ -1,4 +1,6 @@
-import { ChillisState } from '../../types/redux/state/chillis';
+import { uniq } from 'lodash';
+
+import { ChillisState } from '../../types/redux/state';
 import { Actions, ChillisActionTypes } from '../../types/redux/actions';
 
 const initialState: ChillisState = {
@@ -10,8 +12,14 @@ function chillisReducer (state: ChillisState = initialState, action: Actions) {
   switch (action.type) {
     case ChillisActionTypes.CHILLIS_LOADED:
       return {
-        byId: {},
-        allIds: action.payload.chillis.map(chilli => chilli.id),
+        byId: {
+          ...state.byId,
+          ...action.payload.entities.chilli,
+        },
+        allIds: uniq([
+          ...state.allIds,
+          ...action.payload.result,
+        ]),
       };
 
     default:

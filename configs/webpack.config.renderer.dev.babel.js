@@ -25,7 +25,7 @@ const publicPath = `http://localhost:${port}/dist`;
 const dll = path.join(__dirname, '..', 'dll');
 const manifest = path.resolve(dll, 'renderer.json');
 const requiredByDLLConfig = module.parent.filename.includes(
-  'webpack.config.renderer.dev.dll'
+  'webpack.config.renderer.dev.dll',
 );
 
 /**
@@ -34,8 +34,8 @@ const requiredByDLLConfig = module.parent.filename.includes(
 if (!requiredByDLLConfig && !(fs.existsSync(dll) && fs.existsSync(manifest))) {
   console.log(
     chalk.black.bgYellow.bold(
-      'The DLL files are missing. Sit back while we build them for you with "yarn build-dll"'
-    )
+      'The DLL files are missing. Sit back while we build them for you with "yarn build-dll"',
+    ),
   );
   execSync('yarn build-dll');
 }
@@ -203,10 +203,10 @@ export default merge(baseConfig, {
     requiredByDLLConfig
       ? null
       : new webpack.DllReferencePlugin({
-          context: path.join(__dirname, '..', 'dll'),
-          manifest: require(manifest),
-          sourceType: 'var',
-        }),
+        context: path.join(__dirname, '..', 'dll'),
+        manifest: require(manifest),
+        sourceType: 'var',
+      }),
 
     new webpack.HotModuleReplacementPlugin({
       multiStep: true,
@@ -260,7 +260,7 @@ export default merge(baseConfig, {
       verbose: true,
       disableDotRule: false,
     },
-    before() {
+    before () {
       if (process.env.START_HOT) {
         console.log('Starting Main Process...');
         spawn('npm', ['run', 'start-main-dev'], {

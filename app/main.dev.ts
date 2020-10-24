@@ -17,7 +17,7 @@ import log from 'electron-log';
 import MenuBuilder from './menu';
 
 export default class AppUpdater {
-  constructor() {
+  constructor () {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
@@ -28,6 +28,7 @@ let mainWindow: BrowserWindow | null = null;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
+
   sourceMapSupport.install();
 }
 
@@ -44,7 +45,7 @@ const installExtensions = async () => {
   const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
 
   return Promise.all(
-    extensions.map((name) => installer.default(installer[name], forceDownload))
+    extensions.map((name) => installer.default(installer[name], forceDownload)),
   ).catch(console.log);
 };
 
@@ -74,11 +75,11 @@ const createWindow = async () => {
         process.env.E2E_BUILD === 'true') &&
       process.env.ERB_SECURE !== 'true'
         ? {
-            nodeIntegration: true,
-          }
+          nodeIntegration: true,
+        }
         : {
-            preload: path.join(__dirname, 'dist/renderer.prod.js'),
-          },
+          preload: path.join(__dirname, 'dist/renderer.prod.js'),
+        },
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
@@ -102,6 +103,7 @@ const createWindow = async () => {
   });
 
   const menuBuilder = new MenuBuilder(mainWindow);
+
   menuBuilder.buildMenu();
 
   // Remove this if your app does not use auto updates
