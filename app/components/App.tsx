@@ -4,7 +4,8 @@ type Props = {
   children: ReactNode;
 };
 
-export default function App(props: Props) {
+export default function App (props: Props) {
   const { children } = props;
+
   return <>{children}</>;
 }
