@@ -6,7 +6,7 @@ import App from './components/App';
 import ChillisPage from './pages/ChillisPage';
 import SaucesPage from './pages/SaucesPage';
 
-export default function Routes () {
+const Routes = () => {
   return (
     <App>
       <Redirect path={routes.HOME} to={routes.CHILLIS} />
@@ -16,4 +16,6 @@ export default function Routes () {
       </Switch>
     </App>
   );
-}
+};
+
+export default Routes;
