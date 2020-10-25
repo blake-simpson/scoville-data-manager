@@ -11,21 +11,23 @@ const JSON_DIR = `${DATA_DIR}/data`;
 // const IMAGES_DIR = `${DATA_DIR}/images`;
 
 const loadData = () => {
-  let chillis: Chilli[];
-  let sauces: Sauce[];
+  let chillis: Chilli[] = [];
+  let sauces: Sauce[] = [];
 
   fs.readFile(`${JSON_DIR}/chillis.json`, { encoding: 'utf8' }, (err, data) => {
     if (!err) {
       chillis = JSON.parse(data);
-      store.dispatch(chillisLoaded(chillis));
     }
+
+    store.dispatch(chillisLoaded(chillis));
   });
 
   fs.readFile(`${JSON_DIR}/sauces.json`, { encoding: 'utf8' }, (err, data) => {
     if (!err) {
       sauces = JSON.parse(data);
-      store.dispatch(saucesLoaded(sauces));
     }
+
+    store.dispatch(saucesLoaded(sauces));
   });
 };
 
