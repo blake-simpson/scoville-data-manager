@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import routes from '../../constants/routes.json';
+import { RouteMapping } from '../../constants/routes';
 
 import styles from './App.css';
 
@@ -19,8 +19,8 @@ const App = (props: Props) => {
       </header>
 
       <nav className={styles.nav}>
-        <NavLink to={routes.CHILLIS} activeClassName={styles.activeNav}>Chillis</NavLink>
-        <NavLink to={routes.SAUCES} activeClassName={styles.activeNav}>Sauces</NavLink>
+        <NavLink to={RouteMapping.CHILLIS} activeClassName={styles.activeNav}>Chillis</NavLink>
+        <NavLink to={RouteMapping.SAUCES} activeClassName={styles.activeNav}>Sauces</NavLink>
       </nav>
 
       <div className={styles.contentWrapper}>

@@ -1,0 +1,13 @@
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-l);
+  float: left;
+  color: var(--color-primary);
+  margin: 0 var(--space-s) 0 0;
+}
+
+.button:hover {
+  cursor: pointer;
+}

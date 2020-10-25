@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { getChilliById } from '../../redux/selectors';
 
@@ -27,6 +28,9 @@ const Row = ({ id }: Props) => {
       </td>
       <td>{name}</td>
       <td>{slug}</td>
+      <td>
+        <Link to={`/chillis/${id}/edit`}>Edit</Link>
+      </td>
     </tr>
   );
 };
