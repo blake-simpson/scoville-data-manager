@@ -1,0 +1,63 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: var(--space-l);
+}
+
+.form-item {
+  width: calc(50% - var(--space-l));
+  padding: 0 var(--space-l) 0 0;
+  margin: 0 0 var(--space) 0;
+}
+.form-item.full-width {
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 var(--space-s) 0;
+}
+
+input[type=text],
+input[type=number],
+textarea {
+  padding: var(--space-s);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  display: block;
+  outline: none;
+  width: calc(100% - var(--space));
+  font-size: var(--font-size-s);
+  font-family: var(--font-family);
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+}
+
+textarea {
+  min-height: 8rem;
+}
+
+span.required {
+  color: var(--color-primary-bright);
+  padding-left: 0.3rem;
+}
+
+.scoville-input {
+  width: calc(25% - var(--space));
+  padding-right: var(--space);
+  float: left;
+}
+.scoville-input strong {
+  font-size: var(--font-size-s);
+}
+.scoville-input:last-child {
+  clear: right;
+  width: 25%;
+  padding-right: 0;
+}

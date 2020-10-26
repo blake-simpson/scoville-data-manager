@@ -13,6 +13,7 @@
   --color-primary-bright: rgb(215, 0, 0);
   --color-light: rgb(255, 255, 255);
   --color-dark: rgb(34, 34, 34);
+  --color-muted: rgb(120, 120, 120);
   --color-grey: rgb(242, 242, 242);
   --color-grey-tint: rgba(242, 242, 242, 0.3);
   --color-border: rgb(210, 210, 210);
@@ -37,7 +38,7 @@ body {
   background-color: var(--color-light);
   font-family: 'Avenir Next', Arial, Helvetica, Helvetica Neue, serif;
   font-size: var(--font-size-m);
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 a {
@@ -51,3 +52,4 @@ a:hover {
 
 @import 'tables.css';
 @import 'pages.css';
+@import 'forms.css';

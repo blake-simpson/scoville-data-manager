@@ -86,6 +86,11 @@ module.exports = {
     'import/named': 0,
     'react/jsx-no-bind': 'error',
     'prettier/prettier': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'react/require-default-props': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,

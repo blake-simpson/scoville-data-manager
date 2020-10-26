@@ -51,22 +51,3 @@ tbody:last-child tr:last-child td:first-child {
 tbody:last-child tr:last-child td:last-child {
   border-radius: 0 0 var(--border-radius) 0;
 }
-
-th[data-active] {
-  position: relative;
-  cursor: pointer;
-}
-th[data-active='true']::after {
-  content: '❮';
-  display: inline-block;
-  position: absolute;
-  right: 15px;
-  color: var(--color-primary);
-  transition: transform 0.3s;
-}
-table[data-sort-by='asc'] th[data-active]::after {
-  transform: rotate(270deg);
-}
-table[data-sort-by='desc'] th[data-active]::after {
-  transform: rotate(90deg);
-}
