@@ -22,6 +22,15 @@ function chillisReducer (state: ChillisState = initialState, action: Actions) {
         ]),
       };
 
+    case ChillisActionTypes.UPDATE_CHILLI:
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [action.payload.id]: action.payload,
+        },
+      };
+
     default:
       return state;
   }

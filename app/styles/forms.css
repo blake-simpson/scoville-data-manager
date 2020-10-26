@@ -20,8 +20,8 @@ label {
   margin: 0 0 var(--space-s) 0;
 }
 
-input[type=text],
-input[type=number],
+input[type='text'],
+input[type='number'],
 textarea {
   padding: var(--space-s);
   border-radius: var(--border-radius);
@@ -33,14 +33,14 @@ textarea {
   font-family: var(--font-family);
 }
 
-input[type=text]:focus,
-input[type=number]:focus,
-textarea:focus {
-  border-color: var(--color-primary);
-}
-
 textarea {
   min-height: 8rem;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+textarea:focus {
+  border-color: var(--color-primary);
 }
 
 span.required {
@@ -60,4 +60,20 @@ span.required {
   clear: right;
   width: 25%;
   padding-right: 0;
+}
+
+.save-button {
+  float: right;
+  background: var(--color-primary);
+  color: var(--color-light);
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: var(--space-s) var(--space);
+  font-size: var(--font-size-m);
+  font-family: var(--font-family);
+}
+.save-button:hover {
+  background: var(--color-primary-bright);
 }

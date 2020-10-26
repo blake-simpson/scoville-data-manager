@@ -1,11 +1,12 @@
 import React, { ChangeEvent, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import BackButton from '../../components/BackButton';
 import ChilliSelector from '../../components/ChilliSelector';
 
 import { getChilliById } from '../../redux/selectors';
+import { updateChilli } from '../../redux/actions';
 
 import { AppState } from '../../types/redux/state';
 import { Chilli } from '../../types/resources';
@@ -15,6 +16,7 @@ type NavigationParams = {
 }
 
 const EditChilliPage = () => {
+  const dispatch = useDispatch();
   const navParams = useParams<NavigationParams>();
   const id = parseInt(navParams.id, 10);
   const chilli = useSelector((state: AppState) => getChilliById(state, id));
@@ -63,6 +65,10 @@ const EditChilliPage = () => {
     });
   };
 
+  const saveChanges = () => {
+    dispatch(updateChilli(values));
+  };
+
   if (!chilli) {
     return (
       <>
@@ -74,6 +80,8 @@ const EditChilliPage = () => {
 
   return (
     <main className="content-page">
+      <button type="button" className="save-button" onClick={saveChanges}>Save</button>
+
       <h2>Edit Chilli</h2>
 
       <p>
