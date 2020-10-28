@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 import { RouteMapping } from '../../constants/routes';
 
+import Toast from '../Toast';
+
 import styles from './App.css';
 
 type Props = {
@@ -14,6 +16,8 @@ const App = (props: Props) => {
 
   return (
     <div className={styles.appWrapper}>
+      <Toast />
+
       <header className={styles.header}>
         <h1>scovilleranking.com: Data Manager</h1>
       </header>

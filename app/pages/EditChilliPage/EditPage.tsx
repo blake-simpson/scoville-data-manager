@@ -6,9 +6,10 @@ import BackButton from '../../components/BackButton';
 import ChilliSelector from '../../components/ChilliSelector';
 
 import { getChilliById } from '../../redux/selectors';
-import { updateChilli } from '../../redux/actions';
+import { updateChilli, showToast } from '../../redux/actions';
 
 import { AppState } from '../../types/redux/state';
+import { ToastDisplayTypes } from '../../types/redux/actions';
 import { Chilli } from '../../types/resources';
 
 type NavigationParams = {
@@ -67,6 +68,7 @@ const EditChilliPage = () => {
 
   const saveChanges = () => {
     dispatch(updateChilli(values));
+    dispatch(showToast({ displayAs: ToastDisplayTypes.SUCCESS, text: 'Chilli saved!' }));
   };
 
   if (!chilli) {
