@@ -5,6 +5,7 @@ import { Chilli } from '../../resources';
 
 export enum ChillisActionTypes {
   CHILLIS_LOADED = 'CHILLIS_LOADED',
+  CREATE_CHILLI = 'CREATE_CHILLI',
   UPDATE_CHILLI = 'UPDATE_CHILLI',
 }
 
@@ -13,10 +14,15 @@ export interface ChillisLoadedAction extends Action {
   payload: NormalizedChillis;
 }
 
+export interface CreateChilliAction extends Action {
+  type: ChillisActionTypes.CREATE_CHILLI;
+}
+
 export interface UpdateChilliAction extends Action {
   type: ChillisActionTypes.UPDATE_CHILLI;
   payload: Chilli;
 }
 
 export type ChillisActions = ChillisLoadedAction
+  | CreateChilliAction
   | UpdateChilliAction;

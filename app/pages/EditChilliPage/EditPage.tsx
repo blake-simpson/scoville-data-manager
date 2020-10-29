@@ -84,6 +84,7 @@ const EditChilliPage = () => {
     <main className="content-page">
       <button type="button" className="save-button" onClick={saveChanges}>Save</button>
 
+      <BackButton />
       <h2>Edit Chilli</h2>
 
       <p>

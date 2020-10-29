@@ -62,7 +62,8 @@ span.required {
   padding-right: 0;
 }
 
-.save-button {
+.save-button,
+.new-button {
   float: right;
   background: var(--color-primary);
   color: var(--color-light);
@@ -74,6 +75,14 @@ span.required {
   font-size: var(--font-size-m);
   font-family: var(--font-family);
 }
-.save-button:hover {
+
+.new-button {
+  margin-top: -3em;
+  margin-bottom: var(--space-l);
+  background-color: var(--color-success);
+}
+
+.save-button:hover,
+.new-button:hover {
   background: var(--color-primary-bright);
 }

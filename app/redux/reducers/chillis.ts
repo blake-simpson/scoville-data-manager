@@ -8,6 +8,10 @@ const initialState: ChillisState = {
   allIds: [],
 };
 
+const getHighestId = (state: ChillisState): number => {
+  return Math.max.apply(null, state.allIds);
+};
+
 function chillisReducer (state: ChillisState = initialState, action: Actions) {
   switch (action.type) {
     case ChillisActionTypes.CHILLIS_LOADED:
@@ -19,6 +23,26 @@ function chillisReducer (state: ChillisState = initialState, action: Actions) {
         allIds: uniq([
           ...state.allIds,
           ...action.payload.result,
+        ]),
+      };
+
+    case ChillisActionTypes.CREATE_CHILLI:
+      const newId = getHighestId(state) + 1;
+
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [newId]: {
+            id: newId,
+            slug: '',
+            name: '',
+            scoville: {},
+          },
+        },
+        allIds: uniq([
+          ...state.allIds,
+          newId,
         ]),
       };
 
