@@ -28,6 +28,7 @@ const ChillisPage = () => {
             <th>ID</th>
             <th>Name</th>
             <th>Slug</th>
+            <th>Scoville</th>
             <th>Actions</th>
           </tr>
         </thead>

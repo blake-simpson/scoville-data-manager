@@ -7,6 +7,8 @@ import { getChilliById } from '../../redux/selectors';
 import { AppState } from '../../types/redux/state';
 import { Chilli } from '../../types/resources';
 
+import { formatScovilleRating } from '../../helpers/formatting';
+
 interface Props {
   id: Chilli['id']
 };
@@ -18,7 +20,7 @@ const Row = ({ id }: Props) => {
     return null;
   }
 
-  const { name, slug } = chilli;
+  const { name, slug, scoville } = chilli;
 
   return (
     <tr>
@@ -28,6 +30,7 @@ const Row = ({ id }: Props) => {
       </td>
       <td>{name}</td>
       <td>{slug}</td>
+      <td>{formatScovilleRating(scoville)}</td>
       <td>
         <Link to={`/chillis/${id}/edit`}>Edit</Link>
       </td>
