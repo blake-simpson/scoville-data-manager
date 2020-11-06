@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { RouteMapping } from '../../constants/routes';
 
 import Toast from '../Toast';
+import ExportControl from '../ExportControl';
 
 import styles from './App.css';
 
@@ -19,6 +20,7 @@ const App = (props: Props) => {
       <Toast />
 
       <header className={styles.header}>
+        <ExportControl />
         <h1>scovilleranking.com: Data Manager</h1>
       </header>
 

@@ -1,4 +1,5 @@
 import { ChillisState, SaucesState } from './state';
+import { Chilli, Sauce } from '../resources';
 
 export interface NormalizedChillis {
   entities: {
@@ -16,4 +17,12 @@ export interface NormalizedSauces {
     };
   };
   result: number[];
+}
+
+export interface DenormalizedChillis {
+  data: Chilli[]
+}
+
+export interface DenormalizedSauces {
+  data: Sauce[]
 }

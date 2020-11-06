@@ -1,0 +1,16 @@
+.button {
+  float: right;
+  background: var(--color-dark);
+  color: var(--color-light);
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: var(--space-s) var(--space);
+  font-size: var(--font-size-m);
+  font-family: var(--font-family);
+}
+
+.button:hover {
+  background: var(--color-success);
+}

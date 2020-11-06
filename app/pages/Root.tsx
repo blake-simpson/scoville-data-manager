@@ -6,7 +6,7 @@ import { History } from 'history';
 import { Store } from '../redux/store';
 import Routes from '../Routes';
 
-import FileService from '../services/FileService';
+import { loadData } from '../services/FileService';
 
 type Props = {
   store: Store;
@@ -15,7 +15,7 @@ type Props = {
 
 const Root = ({ store, history }: Props) => {
   useEffect(() => {
-    FileService.loadData();
+    loadData();
   }, []);
 
   return (

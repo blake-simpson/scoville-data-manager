@@ -1,5 +1,5 @@
 import { ToastState } from '../../types/redux/state';
-import { ToastDisplayTypes, Actions, ToastActionTypes } from '../../types/redux/actions';
+import { ExportActionTypes, ToastDisplayTypes, Actions, ToastActionTypes } from '../../types/redux/actions';
 
 const initialState: ToastState = {
   visible: false,
@@ -9,6 +9,20 @@ const initialState: ToastState = {
 
 function saucesReducer (state: ToastState = initialState, action: Actions) {
   switch (action.type) {
+    case ExportActionTypes.EXPORT_COMPLETE:
+      return {
+        visible: true,
+        text: 'Data backed up to Google Drive!',
+        displayAs: ToastDisplayTypes.SUCCESS,
+      };
+
+    case ExportActionTypes.EXPORT_ERROR:
+      return {
+        visible: true,
+        text: 'Backup failed. Please check your Google Drive structure.',
+        displayAs: ToastDisplayTypes.ERROR,
+      };
+
     case ToastActionTypes.SHOW_TOAST:
       return {
         visible: true,

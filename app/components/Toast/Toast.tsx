@@ -18,11 +18,11 @@ const Toast = () => {
     dispatch(hideToast());
   };
 
-  setTimeout(close, 3000);
-
   if (!toastData?.visible) {
     return null;
   }
+
+  setTimeout(close, 3000);
 
   const typeStyles = {
     [styles.success]: toastData.displayAs === ToastDisplayTypes.SUCCESS,
