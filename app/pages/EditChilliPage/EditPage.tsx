@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import BackButton from '../../components/BackButton';
 import ChilliSelector from '../../components/ChilliSelector';
+import ImageEditor from '../../components/ImageEditor';
 
 import { getChilliById } from '../../redux/selectors';
 import { updateChilli, showToast } from '../../redux/actions';
@@ -181,6 +182,8 @@ const EditChilliPage = () => {
             <input type="number" value={values.scoville.absolute} onChange={scovilleUpdated('absolute')} />
           </p>
         </div>
+
+        <ImageEditor chilliId={id} />
       </div>
     </main>
   );

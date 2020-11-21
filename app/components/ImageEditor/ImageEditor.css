@@ -1,0 +1,12 @@
+.container {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space);
+  padding-top: var(--space);
+  width: 100%;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -8,10 +8,10 @@ import { store } from '../redux/store';
 import { chillisLoaded, saucesLoaded, exportComplete, exportError } from '../redux/actions';
 import { denormalizeChillis, denormalizeSauces } from '../redux/normalizers';
 
-const HOME_DIR = os.homedir();
-const DATA_DIR = `${HOME_DIR}/Google Drive/scoville-ranking-data`;
-const JSON_DIR = `${DATA_DIR}/data`;
-// const IMAGES_DIR = `${DATA_DIR}/images`;
+export const HOME_DIR = os.homedir();
+export const DATA_DIR = `${HOME_DIR}/Google Drive/scoville-ranking-data`;
+export const JSON_DIR = `${DATA_DIR}/data`;
+export const IMAGES_DIR = `${DATA_DIR}/images`;
 
 const encodingOptions = { encoding: 'utf8' };
 

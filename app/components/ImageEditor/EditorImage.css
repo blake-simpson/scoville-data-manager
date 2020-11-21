@@ -1,0 +1,12 @@
+.wrapper {
+  padding: var(--space-s);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-right: var(--space);
+}
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
